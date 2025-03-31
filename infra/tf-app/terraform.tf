@@ -6,6 +6,7 @@ terraform {
     storage_account_name = "feli0041githubactions"
     container_name       = "tfstate"
     key                  = "prod.app.tfstate"
+    use_oidc             = true
   }
 
   required_providers {
@@ -21,4 +22,5 @@ terraform {
 provider "azurerm" {
   # Leave the features block empty to accept all defaults
   features {}
+  use_oidc = true
 }
