@@ -3,7 +3,7 @@ terraform {
 
   backend "azurerm" {
     resource_group_name  = "feli0041-githubactions-rg"
-    storage_account_name = "feli0041githubactions"
+    storage_account_name = "felix0041githubactions"
     container_name       = "tfstate"
     key                  = "prod.app.tfstate"
     use_oidc             = true
