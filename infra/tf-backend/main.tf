@@ -20,12 +20,12 @@ provider "azurerm" {
 
 
 resource "azurerm_resource_group" "cst8918_rg" {
-  name     = "${var.labelPrefix}-githubactions-rg"
+  name     = "${var.label_prefix}-githubactions-rg"
   location = var.region
 }
 
 resource "azurerm_storage_account" "cst8918_storage" {
-  name                     = "${var.labelPrefix}githubactions"
+  name                     = "${var.label_prefix}githubactions"
   resource_group_name      = azurerm_resource_group.cst8918_rg.name
   location                 = azurerm_resource_group.cst8918_rg.location
   account_tier             = "Standard"
