@@ -25,7 +25,7 @@ resource "azurerm_resource_group" "cst8918_rg" {
 }
 
 resource "azurerm_storage_account" "cst8918_storage" {
-  name                     = "${var.label_prefix}githubactions"
+  name                     = "${var.label_prefix}githubactionss"
   resource_group_name      = azurerm_resource_group.cst8918_rg.name
   location                 = azurerm_resource_group.cst8918_rg.location
   account_tier             = "Standard"
