@@ -7,15 +7,15 @@ resource "azurerm_resource_group" "cst8918_rg" {
 resource "azurerm_virtual_network" "vnet" {
   name                = "${var.labelPrefix}-A12Vnet"
   address_space       = ["10.0.0.0/16"]
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.cst8918_rg.location
+  resource_group_name = azurerm_resource_group.cst8918_rg.name
 }
 
 
 # Define the subnet
 resource "azurerm_subnet" "webserver" {
   name                 = "${var.labelPrefix}-A12Subnet"
-  resource_group_name  = azurerm_resource_group.rg.name
+  resource_group_name  = azurerm_resource_group.cst8918_rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.1.0/24"]
 }
